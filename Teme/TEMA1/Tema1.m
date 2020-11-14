@@ -35,5 +35,3 @@ rxe = xcov(x,'biased') ; %autocovariatia deviata
 %Semnale audio
 %FS=50;
 x = audioread('xilo.wav');
-audiowrite(x, 'xilo.way')
-%audiowrite('sunet.wav', x, FS)

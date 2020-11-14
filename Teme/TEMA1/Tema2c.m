@@ -1,6 +1,6 @@
 function Tema2c(omega, Ts, M)
     %Functia Tema2c reprezinta graficul dintre semnalul sinusoidal si cel
-    %dinscret , apeland functia in care am calculat semnalul discret la
+    %discret , apeland functia in care am calculat semnalul discret la
     %punctul b)
     %omega = (2*pi)/3; %pulsatia
     %Ts = 1; %perioada de esantionare

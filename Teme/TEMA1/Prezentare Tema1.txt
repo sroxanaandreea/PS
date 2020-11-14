@@ -1,0 +1,79 @@
+In cadrul primei teme am avut de studiat cateva semnale esantonate cu frecvente diferite.
+
+LUCRAREA 1
+
+Pentru lucrarea numarul 1 am avut de implementat cateva functii in matlab, 
+pentru a invata sa lucram cu acestea si sa le folosim pe parcursul temei.
+
+Am implementat impulsul unitar, treapta unitate, semnalul exponential si sinusoida reala cat si cea complexa.
+Mai departe am plotat semnalele sinusoidale folosint atat functia plot cat si functia stem
+
+LUCRAREA 2
+a)
+Pentru lucrarea 2 aveam de aflat duratele semnalelor de studiat avand la dispozitie frecventele lor 
+de esantionare si esantioanele respective;
+Prima oara am incarcat semnalele pe rand cu ajutorul functiei load si am stabilit pentru fiecare semnal
+frecventa acestuia. Iar pentru a calcula perioada am facut o simpla impartire a numarului de elemnte(esantioane)
+din cadrul semnalului la frecventa lui.
+Frecventa de esantionare este inversul perioadei, dar perioada reprezinta dinstanta dintre 2 esantioane. 
+deci de aici imi dau seama destul de usor ca aceasta durata este de fapt numarul de esantione inmultita cu perioada.
+
+b)
+Pentru punctul b aveam de implementat o functie calcula semnalul obtinut prin esantionarea sinusoidei continue xa(t) = sin(Ωt).
+Astfel am implementat aceasta functie in care am dat ca argument de iesire pe x, iar ca argumente de intrare sunt pulsatia omega, 
+perioada de esantionare Ts si lungimea suportului de semnal M pe care le-am ales aleator. In interiorul functiem am implementat
+astfel semnalul discret. Functia apoi am apelat-o in scriptul aferent lucrarii 2.
+
+c) 
+Pentrul subpunctul c, la fel aveam de implementat o functie matlab care trasa pe acelasi grafic atat o sinusoida discreta , cat si una continua.
+Pentru implementare am avut nevoie sa apelez in interiorul acestei functii, functia calculata anterior la subpunctul b).
+La fel am ales aleaor valori pentru pulsatie , perioada de esantionare si lungimea suportului. De fapt, am dat aceleasi valori ca la subpunctul b)
+. Am apelat functia si am plotat cu ajutorul functiei plot si stem semnalele continue si discrete, iar mai apoi am apelat aceasta functie in
+scriptul lucrarii 2.
+
+LUCRAREA 3
+In cazul temei 3 aveam nevoie de functiile calculate anterior.
+a)
+Pentru subpunctul a) alegeam pulsatia pi/15, perioada de esantionare 1 pentru comoditate, iar lungimea suportului de semnal
+era aleasa aleator.In continuarea m apelat functia de la punctul c) al Temei 2 pentru a reprezenta graficul dintre semnalul 
+sinusoidal si cel continuu si am calculat perioada cu ajutorul formulei.
+b) La subpunctul urmatoru a trebuit sa vedem ce se intampla in cazul in care am tripla cumva pulsatia. Observam in acest caz daca marim 
+pulsatia, scade perioada, deoarece frecventa a crescut. Am trasat si aici graficul cu ajutorul functiei implementate pentru tema2 c).
+
+Pentru a afla alte valori ale lui k, puteam alege o valoare pentru pulsatie, egalam aceasta valoare cu 2kpi/N si de acolo scoteam N-ul. Tineam
+cont de faptul ca N trebuia sa fie numar natural si asfel aegeam un k corespunzator.
+
+c)
+Pentru punctul c) trebuia sa luam pulsatia omega=1 astfel incat aceasta sa nu fie un multiplu de pi. In continuare am calculat sinusoida continua si discreta ,
+ca mai apoi sa plotez rezultatul respectiv, obtinand graficul.
+d)
+La punctul d) trebuia sa aobservam ce se intampla atunci cand discretizam 2 semnale ale caror pulsatie difera doar prin 2pi.
+Observam din grafic ca desi semnalul 2 variaza mai mult, acestea sunt oarecum identice, deoarece semnalele discretizate au aceeasi perioada in ambele cazuri.
+
+LUCRAREA 4
+a)
+La subpunctul a) luam un semnal discret cu repartitie gaussiana (randn) . Acest semnal are media 0 si dispersia este unitara.
+Pentru realizarea autocorelatiei folosim functia xcorr cu parametrii x1, L(nr de esantioane pe care pe care vrem sa ii extragem) si biased(tinem cont de media semnalului).
+Pentru grafic luam timpul de la -L: L( xcorr asta returneaza, un vector de elemente in poz 0:2L).
+
+b)
+La punctul b) avem de generat un semnal sinusoidal cu suportul 0: N − 1, astfel  incat acesta sa continacel putin 5 perioade ale sinusoidei.
+La fel ca la subpunctul anterior alegem o pulsatie si un suport de semnal aleator. Alegem L astfel incat sa fie jumatate din suportul ales si 
+calculam corelatia semnalului, ca mai apoi sa ii trasam graficul. Observam cumva ca k este proportional cu perioada semnalului.
+
+c)
+La punctul c) aveam de extras esantioanele semnalului xilo si sa estimam autocorelatiile acetui fragment de semnal. 
+Prima oara incarcam emnalul xilo in matlab. Extragem esantioanele. Alegem un L aleator si calculam autocorelatia pentru semnalul astfel selectat
+ca mai apoi sa ii trasam graficul. 
+Maximele si minimile locale ne dau informatii utile legate de perioadele prezente in semnal.
+Din graficul rezultat in urma autocorelatiei putem extrage perioadele armonicelor prezente in smenal, dar si amplitudinile acestora/
+
+d)
+La punctul d) incarcam sunetele si efectuam aceleasi calcule pentru aceste ca la subpunctul anterior, adca autocorelatia si trasarea graficului.Din grafic putem observa ca semnalele
+a si i nu au o forma de zgomot, mai mult e o forma periodica, pe cand sunetul s este mai asemanator unui zgomot alb. De acest fapt ne putem da seama si cand ii calculam media, deaorece
+aceasta respecta proprietatea acestui tip de zgomot.
+
+LUCRAREA 5
+
+Iar in tema 5, trebuia sa trasam o gaussiana si sa obsrvam ca randn produce un semnal gaussian. Pentru acest lucru am ales un numar din ce in ce mai mare de esantioane si am plotat histograma, 
+iar peste ea am pus densitatea de probabilitate a unei gaussienesi.
