@@ -5,7 +5,7 @@
 
 % Program pentru Laborator 3, Prelucrarea semnalelor
 
-test = 5;			% 0 - suma de sinusoide filtrata
+test = 0;			% 0 - suma de sinusoide filtrata
 						% 1 - vioara
 						% 2 - viola
                   % 3 - clarinet
@@ -66,11 +66,20 @@ end
 [X,f] = freqz(x,1,Nf);
 figure(1)
 plot(f/pi,abs(X));
+title('spectrul sumei de sinusoide');
 
+x = x / max(abs(x));
+xp = audioplayer(x,Fes) ;
+play(xp) ; 
+
+%%
 % filtru reprezentand instrumentul
 if test == 0
   b = 1;						% alege un filtru IIR (instrumentul !!!)
-  a = [1 -0.95];
+  a = [1 -0.79];
+  r1 = roots(b);
+  r2 = roots(a)
+  
   figure(3)
   freqz(b,a);				% caracteristica de frecventa
 else
@@ -81,8 +90,11 @@ y = filter(b,a,x);		% iesirea filtrului
 [Y,f] = freqz(y,1,Nf);% spectrul semnalului de iesire
 figure(2)
 plot(f/pi,abs(Y));
+title('spectrul semnalului de iesire');
 
 % salveaza semnal audio
 y = y / max(abs(y));
+yp = audioplayer(y,Fes) ;
+play(yp) ; 
 
-adiouwrite(['muz' int2str(test) '.mp4'], y, 40000, 'BitsPerSample', 16);
+audiowrite(['muz' int2str(test) '.wav'], y, 40000, 'BitsPerSample', 16);

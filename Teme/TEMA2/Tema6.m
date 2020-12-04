@@ -40,7 +40,7 @@ a2 = 0.5;
 a3 = 1;
 a4 = 3;
 a5 = 5;
-%for a = [0.1, 0.5, 1, 3, 5]
+
 x1_c = cos(omega0 * n) + a1*e;
 x2_c = cos(omega0 * n) + a2*e;
 x3_c = cos(omega0 * n) + a3*e;

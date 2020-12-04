@@ -9,7 +9,6 @@ omega = -pi : 0.01 : pi;
 load ('sunspot.dat');
 
 X_300 = freqz(sunspot(:,2), 1, omega);
-max_spectru_300 = max(abs(X_300));
 omega_300 = 0.57;           %Valoare aflata din grafic. Am luat urmatoare valoare maxima dupa 0.
 T_300 = 2*pi/omega_300;     %Calculul perioadei in functie de pulsatia gasita;
 

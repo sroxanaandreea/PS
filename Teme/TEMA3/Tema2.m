@@ -14,57 +14,128 @@ r5 = 1;
 
 b1 = [1 -2*r1*cos(teta) r1*r1];
 H1 = freqz(b1, 1, omega);
-figure;
-plot(omega, abs(H1));
-hold on;
 
 b2 = [1 -2*r2*cos(teta) r2*r2];
 H2 = freqz(b2, 1, omega);
-plot(omega, abs(H2));
-hold on;
 
 b3 = [1 -2*r3*cos(teta) r3*r3];
 H3 = freqz(b3, 1, omega);
-plot(omega, abs(H3));
-hold on;
 
 b4 = [1 -2*r4*cos(teta) r4*r4];
 H4 = freqz(b4, 1, omega);
-plot(omega, abs(H4));
-hold on;
 
 b5 = [1 -2*r5*cos(teta) r5*r5];
 H5 = freqz(b5, 1, omega);
+
+figure(1);
+subplot(2, 1, 1);
+plot(omega, abs(H1));
+hold on;
+plot(omega, abs(H2));
+hold on;
+plot(omega, abs(H3));
+hold on;
+plot(omega, abs(H4));
+hold on;
 plot(omega, abs(H5));
+xlabel('Frecventa normalizata');
+ylabel('Amplitudine');
 legend( 'H1', 'H2', 'H3', 'H4', 'H5')
 hold off;
 
+subplot(2, 1, 2);
+plot(omega, 20*log(abs(H1)));
+hold on;
+plot(omega, 20*log(abs(H2)));
+hold on;
+plot(omega, 20*log(abs(H3)));
+hold on;
+plot(omega, 20*log(abs(H4)));
+hold on;
+plot(omega, 20*log(abs(H5)));
+xlabel('Frecventa normalizata');
+ylabel('Amplitudine reprezentata in decibeli');
+hold off;
+
+figure(2);
+subplot(1, 5, 1)
+zplane(b1,1);
+hold on;
+subplot(1, 5, 2)
+zplane(b2,1);
+hold on;
+subplot(1, 5, 3)
+zplane(b3,1);
+hold on;
+subplot(1, 5, 4)
+zplane(b4,1);
+hold on;
+subplot(1, 5, 5)
+zplane(b5,1);
+hold on;
+
 %%
+% O alta valoare a lui teta:
 teta2 = 2*pi/3;
 
 b1 = [1 -2*r1*cos(teta2) r1*r1];
 H1 = freqz(b1, 1, omega);
-figure;
-plot(omega, abs(H1));
-hold on;
 
 b2 = [1 -2*r2*cos(teta2) r2*r2];
 H2 = freqz(b2, 1, omega);
-plot(omega, abs(H2));
-hold on;
 
 b3 = [1 -2*r3*cos(teta2) r3*r3];
 H3 = freqz(b3, 1, omega);
-plot(omega, abs(H3));
-hold on;
 
 b4 = [1 -2*r4*cos(teta2) r4*r4];
 H4 = freqz(b4, 1, omega);
-plot(omega, abs(H4));
-hold on;
 
 b5 = [1 -2*r5*cos(teta2) r5*r5];
 H5 = freqz(b5, 1, omega);
+
+figure(1);
+subplot(2, 1, 1);
+plot(omega, abs(H1));
+hold on;
+plot(omega, abs(H2));
+hold on;
+plot(omega, abs(H3));
+hold on;
+plot(omega, abs(H4));
+hold on;
 plot(omega, abs(H5));
+xlabel('Frecventa normalizata');
+ylabel('Amplitudine');
 legend( 'H1', 'H2', 'H3', 'H4', 'H5')
 hold off;
+
+subplot(2, 1, 2);
+plot(omega, 20*log(abs(H1)));
+hold on;
+plot(omega, 20*log(abs(H2)));
+hold on;
+plot(omega, 20*log(abs(H3)));
+hold on;
+plot(omega, 20*log(abs(H4)));
+hold on;
+plot(omega, 20*log(abs(H5)));
+xlabel('Frecventa normalizata');
+ylabel('Amplitudine reprezentata in decibeli');
+hold off;
+
+figure(2);
+subplot(1, 5, 1)
+zplane(b1,1);
+hold on;
+subplot(1, 5, 2)
+zplane(b2,1);
+hold on;
+subplot(1, 5, 3)
+zplane(b3,1);
+hold on;
+subplot(1, 5, 4)
+zplane(b4,1);
+hold on;
+subplot(1, 5, 5)
+zplane(b5,1);
+hold on;

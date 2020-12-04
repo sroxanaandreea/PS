@@ -29,6 +29,6 @@ hold off;
 sp = @(omega) abs ((sin ((omega- omega0)'*N/2))/(sin ((omega- omega0)'/2)));  %Implementez formula 2.16
 spp = sp(0.3927)    %Calculez formula in functie de omega0
 
-%zin mod ideal egalittea se verifica pentru ca exista o diferenta mica pe
+%In mod ideal egalittea se verifica pentru ca exista o diferenta mica pe
 %axa Y intre cele 2 puncte(x si n), dar in realitate spectrul lui omega0
 %tinde la n, dar nu ajunge niciodata la n => nu este egalitate.

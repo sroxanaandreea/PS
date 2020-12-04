@@ -39,7 +39,7 @@
 %
 %	Authors: Bogdan DUMITRESCU & Dan STEFANOIU
 %	Created: March 15, 2010 
-%	Revised: November 16, 2020
+%	Revised: November 16-21, 2020
 %
 
 function [y,n,Y,f,yp] = musical_tones(instrument,filter_pole,d)
@@ -195,12 +195,20 @@ function [y,n,Y,f,yp] = musical_tones(instrument,filter_pole,d)
 	y = y/max(abs(y)) ; 
 	yp = audioplayer(y,Fs) ;
 	yn = input([yn ' Play the tone? [y/n, Enter=no]: '],'s') ; 
+	if (isempty(yn))
+	   yn = 'n' ;
+	end ; 
 	yn = yn(1) ; 
 	if ((yn == 'y') || (yn == 'Y'))
 	   play(yp) ; 
         end ;
-	auwrite(y,Fs,16,'linear',[FN '.au']) ; 
-	wavwrite(y,Fs,32,[FN '.wav']) ; 
+	if (exist('wavwrite.m'))
+	   wavwrite(y,Fs,32,[FN '.wav']) ; 
+	elseif (exist('auwrite.m'))
+	   auwrite(y,Fs,16,'linear',[FN '.au']) ; 
+	else
+	   audiowrite([FN '.wav'],y,Fs,'BitsPerSample',32) ; 
+	end ;
 %
 % END
 %

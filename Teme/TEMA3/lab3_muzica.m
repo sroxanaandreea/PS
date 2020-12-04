@@ -5,7 +5,7 @@
 % Analizati cu atentie functia MUSICAL_TONES.
 %
 
-instrument = 3 ; 
+instrument = 0 ; 
 
 pol = -0.95 ; 
 
