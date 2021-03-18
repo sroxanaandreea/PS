@@ -87,7 +87,7 @@ else
 end
 
 y = filter(b,a,x);		% iesirea filtrului
-[Y,f] = freqz(y,1,Nf);% spectrul semnalului de iesire
+[Y,f] = freqz(y,1,Nf);  % spectrul semnalului de iesire
 figure(2)
 plot(f/pi,abs(Y));
 title('spectrul semnalului de iesire');

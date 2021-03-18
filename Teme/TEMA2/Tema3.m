@@ -40,7 +40,7 @@ hold off;
 
 omega1_c = pi/6;
 omega2_c = pi/11;
-xn_c = sin(omega1_c * n) + sin(omega2_c * n);
+xn_c = 3*sin(omega1_c * n) + 5*sin(omega2_c * n);
 
 T1_c = 2*pi/omega1_c; %perioada primei sinusoide
 T2_c = 2*pi/omega2_c; %perioada celei de a doua
@@ -63,7 +63,7 @@ hold off;
 
 %Aleg omega1 si omega2 astfel incat omega1 - omega2 = 0.01
 omega1_d = 2*pi/3;
-omega2_d = omega1_d - 0.01;
+omega2_d = omega1_d - 0.1;
 
 xn_d = sin(omega1_d * n) + sin(omega2_d * n);
 
